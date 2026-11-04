@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Cybertrix.in — Practical Cybersecurity Training &amp; Labs</title>
+  <meta name="description"
+    content="Cybertrix.in delivers practical hands-on cybersecurity training, ethical hacking masterclasses, web pentesting labs, SOC operations, and digital forensics." />
+  <meta name="keywords"
+    content="cybersecurity training, ethical hacking masterclass, web pentesting, bug bounty, SOC analyst, digital forensics, Cybertrix" />
+  <meta property="og:title" content="Cybertrix.in — Practical Cybersecurity Training &amp; Labs" />
+  <meta property="og:description"
+    content="Master ethical hacking, web pentesting, SOC analysis, and digital forensics through real-world labs." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0e1218" id="themeColor" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cybertrix-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.dataset.theme = savedTheme;
+      } else {
+        document.documentElement.dataset.theme = 'light';
+      }
+    } catch (_) {
+      document.documentElement.dataset.theme = 'light';
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- NAV -->
+  <nav id="navbar" aria-label="Primary navigation">
+    <a class="nav-logo" href="#home" onclick="showPage('home'); return false;">
+      <img src="assets/logo.png" alt="Cybertrix.in" />
+      <span class="nav-logo-text">Cyber<span>trix</span>.in</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="showPage('home'); return false;" id="nav-home" class="active" aria-current="page">Home</a></li>
+      <li><a href="#courses" onclick="showPage('courses'); return false;" id="nav-courses">Courses</a></li>
+      <li><a href="#roadmaps" onclick="showPage('roadmaps'); return false;" id="nav-roadmaps">Roadmaps</a></li>
+      <li><a href="#blogs" onclick="showPage('blogs'); return false;" id="nav-blogs">Blog</a></li>
+      <li><a href="#contact" onclick="showPage('contact'); return false;" id="nav-contact" class="nav-cta">Contact</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Switch to light theme" title="Switch theme">
+          <i class="fas fa-sun" id="themeIcon" aria-hidden="true"></i>
+          <span id="themeLabel">Light</span>
+        </button>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+
+  <!-- ═══════════════════════════════════════
+     HOME
+════════════════════════════════════════ -->
+  <div class="page active" id="page-home">
+
+    <div class="hero">
+      <p class="hero-eyebrow">Cybersecurity Academy —</p>
+      <h1 class="hero-heading">
+        Learn cybersecurity<br>
+        the <em>practical</em> way.
+      </h1>
+      <p class="hero-text">
+        Cybertrix.in teaches cybersecurity through hands-on labs and real-world scenarios.
+        We cover ethical hacking, web and network pentesting, SOC operations, API security,
+        and digital forensics — structured for beginners and working professionals.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-rocket"></i> View Courses</a>
+        <a class="btn btn-outline" href="#roadmaps" onclick="showPage('roadmaps'); return false;"><i class="fas fa-map"></i> Roadmaps</a>
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stats-inner">
+        <div class="stat-item reveal">
+          <span class="stat-num" data-count="8">0</span>
+          <span class="stat-label">Courses available</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num" data-count="6">0</span>
+          <span class="stat-label">Learning paths</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Free foundation courses</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Development masterclasses</span>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="home-intro-grid">
+          <div>
+            <span class="section-label">What we do</span>
+            <h2 class="section-heading">Practical skills,<br>not slide decks.</h2>
+            <p class="section-body" style="margin-bottom:20px;">
+              Most cybersecurity courses are just video lectures. At Cybertrix.in, every topic
+              comes with a lab environment where you practice on real tools — Burp Suite, Metasploit,
+              Nmap, Wireshark, Volatility — the same stack you'd use on the job.
+            </p>
+          </div>
+          <div class="why-list">
+            <div class="why-item reveal">
+              <span class="why-num">01</span>
+              <div class="why-title">Hands-on labs with every module</div>
+              <div class="why-desc">Practice on intentionally vulnerable machines, CTF challenges, and simulated
+                environments — no theory-only modules.</div>
+            </div>
+            <div class="why-item reveal">
+              <span class="why-num">02</span>
+              <div class="why-title">Mentorship from practitioners</div>
+              <div class="why-desc">Get guidance from people actively working in pentesting, SOC, and bug bounty — not
+                just course creators.</div>
+            </div>
+            <div class="why-item reveal">
+              <span class="why-num">03</span>
+              <div class="why-title">Curriculum aligned to industry certs</div>
+              <div class="why-desc">Our content maps to CEH, OSCP, eJPT, and CompTIA Security+ so your learning
+                transfers directly to certification prep.</div>
+            </div>
+            <div class="why-item reveal">
+              <span class="why-num">04</span>
+              <div class="why-title">Private community and job support</div>
+              <div class="why-desc">Discord access, resume reviews, mock interviews, and referrals to security teams
+                actively hiring.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid var(--border);">
+      <div class="container">
+        <span class="section-label">Courses</span>
+        <h2 class="section-heading" style="margin-bottom:28px;">What we teach</h2>
+        <div class="teach-grid">
+            <a class="teach-item reveal" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-user-secret" aria-hidden="true"></i><span>Ethical Hacking</span></a>
+            <a class="teach-item reveal" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-globe" aria-hidden="true"></i><span>Web Pentesting</span></a>
+            <a class="teach-item reveal" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-network-wired" aria-hidden="true"></i><span>Network Pentesting</span></a>
+            <a class="teach-item reveal" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-eye" aria-hidden="true"></i><span>SOC Analysis</span></a>
+            <a class="teach-item reveal" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-code" aria-hidden="true"></i><span>Python for Hackers</span></a>
+            <a class="teach-item reveal" href="#courses" onclick="showPage('courses'); return false;"><i class="fas fa-search" aria-hidden="true"></i><span>Cybersecurity Fundamentals &amp; Lab Setup</span></a>
+        </div>
+        <div style="margin-top:28px;">
+          <a class="btn btn-outline" href="#courses" onclick="showPage('courses'); return false;">See all courses →</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+     COURSES
+════════════════════════════════════════ -->
+  <div class="page" id="page-courses">
+    <section style="padding-top: 110px;">
+      <div class="container">
+
+        <!-- Course Controls: Filters & Search -->
+        <div class="filter-controls">
+          <div class="filter-tabs" role="group" aria-label="Filter courses">
+            <button class="filter-btn active" type="button" aria-pressed="true" onclick="filterCourses('all', this)">All Courses <span
+                class="filter-count">8</span></button>
+            <button class="filter-btn" type="button" aria-pressed="false" onclick="filterCourses('free', this)"><i class="fas fa-gift" aria-hidden="true"></i> Free Courses
+              <span class="filter-count">2</span></button>
+            <button class="filter-btn" type="button" aria-pressed="false" onclick="filterCourses('paid', this)"><i class="fas fa-gem" aria-hidden="true"></i> Paid Courses
+              <span class="filter-count">6</span></button>
+          </div>
+          <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="search" id="courseSearch" class="search-input" placeholder="Search courses or domains..." aria-label="Search courses"
+              oninput="applyCourseFilters()" />
+          </div>
+        </div>
+
+        <div class="courses-grid">
+
+          <!-- FREE COURSE 1 -->
+          <div class="course-card reveal" data-type="free">
+            <div class="course-banner">
+              <img src="assets/course-banner-1.jpg" alt="Cybersecurity Fundamentals &amp; Lab Setup" />
+              <span class="course-banner-domain">Fundamentals</span>
+              <span class="badge-tag badge-free">Free Course</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Beginner</span>
+                <span class="badge-price">FREE</span>
+              </div>
+              <h3 class="course-name">Cybersecurity Fundamentals &amp; Lab Setup</h3>
+              <p class="course-desc">Introduction to networking, operating systems, security principles, threat
+                landscapes, and setting up your Kali Linux lab environment.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-clock"></i> 15+ hrs</div>
+                <div class="course-meta-item"><i class="fas fa-flask"></i> 12 labs</div>
+                <div class="course-meta-item"><i class="fas fa-certificate"></i> Certificate</div>
+              </div>
+              <div class="course-btns">
+                <!-- When published, replace this with an openVideoModal() button and the course's YouTube URL. -->
+                <button class="btn-access btn-access-free btn-access-full" type="button" disabled>
+                  <i class="fas fa-clock" aria-hidden="true"></i> Video coming soon</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- FREE COURSE 2 -->
+          <div class="course-card reveal" data-type="free">
+            <div class="course-banner">
+              <img src="assets/course-banner-5.jpg" alt="Linux &amp; CLI Essentials for Hackers" />
+              <span class="course-banner-domain">Linux Security</span>
+              <span class="badge-tag badge-free">Free Course</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Beginner</span>
+                <span class="badge-price">FREE</span>
+              </div>
+              <h3 class="course-name">Linux &amp; CLI Essentials for Hackers</h3>
+              <p class="course-desc">Master terminal navigation, file permissions, bash commands, shell scripting,
+                process management, and core Linux security concepts.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-clock"></i> 12+ hrs</div>
+                <div class="course-meta-item"><i class="fas fa-flask"></i> 10 labs</div>
+                <div class="course-meta-item"><i class="fas fa-certificate"></i> Certificate</div>
+              </div>
+              <div class="course-btns">
+                <!-- When published, replace this with an openVideoModal() button and the course's YouTube URL. -->
+                <button class="btn-access btn-access-free btn-access-full" type="button" disabled>
+                  <i class="fas fa-clock" aria-hidden="true"></i> Video coming soon</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAID COURSE: PYTHON FOR HACKERS -->
+          <div class="course-card reveal" data-type="paid">
+            <div class="course-banner">
+              <img src="assets/course-banner-3.jpg" alt="Python For Hackers" />
+              <span class="course-banner-domain">Python / Scripting</span>
+              <span class="badge-tag badge-paid">Paid Course</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Beginner → Advanced</span>
+                <span class="badge-price paid">₹499</span>
+              </div>
+              <h3 class="course-name">Python For Hackers</h3>
+              <p class="course-desc">Learn Python for responsible security automation, log analysis, network visibility, and practical defensive workflows.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-clock"></i> 25+ hrs</div>
+                <div class="course-meta-item"><i class="fas fa-flask"></i> 20 labs</div>
+                <div class="course-meta-item"><i class="fas fa-certificate"></i> Certificate</div>
+              </div>
+              <div class="course-btns">
+                <button onclick="openPdfModal('assets/courses/Python_For_Hackers.pdf', 'Python For Hackers Syllabus')"
+                  class="btn-details"><i class="fas fa-file-alt"></i> Syllabus</button>
+                <a href="https://wa.me/916305847394?text=Hi,%20I'm%20interested%20in%20the%20Paid%20Python%20For%20Hackers%20course%20(₹499)." target="_blank" rel="noopener noreferrer" class="btn-access">Enroll
+                  Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAID COURSE 1 -->
+          <div class="course-card reveal" data-type="paid">
+            <div class="course-banner">
+              <img src="assets/course-banner-2.jpg" alt="Ethical Hacking Masterclass (CEH)" />
+              <span class="course-banner-domain">Ethical Hacking</span>
+              <span class="badge-tag badge-paid">Paid Course</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Beginner → Advanced</span>
+                <span class="badge-price paid">₹999</span>
+              </div>
+              <h3 class="course-name">Ethical Hacking Masterclass (CEH)</h3>
+              <p class="course-desc">Reconnaissance, scanning, exploitation, post-exploitation, privilege escalation,
+                and pentest reporting. CEH aligned curriculum.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-clock"></i> 40+ hrs</div>
+                <div class="course-meta-item"><i class="fas fa-flask"></i> 40 labs</div>
+                <div class="course-meta-item"><i class="fas fa-certificate"></i> Certificate</div>
+              </div>
+              <div class="course-btns">
+                <button onclick="openPdfModal('assets/courses/Ethicalhacking.pdf', 'Ethical Hacking Masterclass Syllabus')"
+                  class="btn-details"><i class="fas fa-file-alt"></i> Syllabus</button>
+                <a href="https://wa.me/916305847394?text=Hi,%20I'm%20interested%20in%20the%20Paid%20Ethical%20Hacking%20Masterclass%20(₹999)."
+                  target="_blank" rel="noopener noreferrer" class="btn-access">Enroll
+                  Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAID COURSE 2 -->
+          <div class="course-card reveal" data-type="paid">
+            <div class="course-banner">
+              <img src="assets/course-banner-4.jpg" alt="Web Application Pentesting Pro" />
+              <span class="course-banner-domain">Web Security</span>
+              <span class="badge-tag badge-paid">Paid Course</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Intermediate → Advanced</span>
+                <span class="badge-price paid">₹2,499</span>
+              </div>
+              <h3 class="course-name">Web Application Pentesting Pro</h3>
+              <p class="course-desc">OWASP Top 10 deep dive, SQL injection, XSS, CSRF, SSRF, JWT vulnerabilities, broken
+                authentication, and business logic exploitation.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-clock"></i> 50+ hrs</div>
+                <div class="course-meta-item"><i class="fas fa-flask"></i> 35 labs</div>
+                <div class="course-meta-item"><i class="fas fa-certificate"></i> Certificate</div>
+              </div>
+              <div class="course-btns">
+                <button onclick="openPdfModal('assets/courses/Web_Application_Pentesting.pdf', 'Web Pentesting Pro Syllabus')"
+                  class="btn-details"><i class="fas fa-file-alt"></i> Syllabus</button>
+                <a href="https://wa.me/916305847394?text=Hi,%20I'm%20interested%20in%20the%20Paid%20Web%20Application%20Pentesting%20Pro%20course%20(₹2,499)."
+                  target="_blank" rel="noopener noreferrer" class="btn-access">Enroll
+                  Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAID COURSE 3 -->
+          <div class="course-card reveal" data-type="paid">
+            <div class="course-banner">
+              <img src="assets/course-banner-6.jpg" alt="SOC Analyst &amp; Threat Hunting Bootcamp" />
+              <span class="course-banner-domain">Blue Team / SOC</span>
+              <span class="badge-tag badge-paid">Paid Course</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Intermediate → Advanced</span>
+                <span class="badge-price paid">₹1,999</span>
+              </div>
+              <h3 class="course-name">SOC Analyst &amp; Threat Hunting Bootcamp</h3>
+              <p class="course-desc">SIEM tools (Splunk/ELK), log analysis, alert triage, threat intelligence, malware
+                analysis basics, and incident response workflow.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-clock"></i> 55+ hrs</div>
+                <div class="course-meta-item"><i class="fas fa-flask"></i> 30 labs</div>
+                <div class="course-meta-item"><i class="fas fa-certificate"></i> Certificate</div>
+              </div>
+              <div class="course-btns">
+                <button onclick="openPdfModal('assets/courses/SOC_Analyst_Bootcamp.pdf', 'SOC Analyst Bootcamp Syllabus')"
+                  class="btn-details"><i class="fas fa-file-alt"></i> Syllabus</button>
+                <a href="https://wa.me/916305847394?text=Hi,%20I'm%20interested%20in%20the%20Paid%20SOC%20Analyst%20Bootcamp%20(₹1,999)."
+                  target="_blank" rel="noopener noreferrer" class="btn-access">Enroll
+                  Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW PAID COURSE: WEB DEVELOPMENT MASTERCLASS -->
+          <div class="course-card reveal" data-type="paid">
+            <div class="course-banner">
+              <img src="assets/course-banner-7.jpg" alt="Web development masterclass" />
+              <span class="course-banner-domain">Web Development</span>
+              <span class="badge-tag badge-paid">New Masterclass</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Beginner → Advanced</span>
+                <span class="badge-price paid">₹2,999</span>
+              </div>
+              <h3 class="course-name">Web Development Masterclass</h3>
+              <p class="course-desc">Build responsive websites and full-stack applications with HTML, CSS, JavaScript, backend APIs, databases, and secure development practices.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-laptop-code"></i> Full stack</div>
+                <div class="course-meta-item"><i class="fas fa-project-diagram"></i> Projects</div>
+                <div class="course-meta-item"><i class="fas fa-shield-alt"></i> Secure coding</div>
+              </div>
+              <div class="course-btns">
+                <button onclick="openPdfModal('assets/courses/Web_Development_Masterclass.pdf', 'Web Development Masterclass Syllabus')"
+                  class="btn-details"><i class="fas fa-file-alt"></i> Syllabus</button>
+                <a href="https://wa.me/916305847394?text=Hi,%20I'm%20interested%20in%20the%20Web%20Development%20Masterclass."
+                  target="_blank" rel="noopener noreferrer" class="btn-access">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW PAID COURSE: APP DEVELOPMENT MASTERCLASS -->
+          <div class="course-card reveal" data-type="paid">
+            <div class="course-banner">
+              <img src="assets/course-banner-8.jpg" alt="App development masterclass" />
+              <span class="course-banner-domain">App Development</span>
+              <span class="badge-tag badge-paid">New Masterclass</span>
+            </div>
+            <div class="course-body">
+              <div class="course-badges">
+                <span class="course-level">Beginner → Advanced</span>
+                <span class="badge-price paid">₹4,499</span>
+              </div>
+              <h3 class="course-name">App Development Masterclass</h3>
+              <p class="course-desc">Learn to plan, build, and release mobile applications, including user interfaces, app logic, API integration, data storage, and application security.</p>
+              <div class="course-meta">
+                <div class="course-meta-item"><i class="fas fa-mobile-alt"></i> Mobile apps</div>
+                <div class="course-meta-item"><i class="fas fa-project-diagram"></i> Projects</div>
+                <div class="course-meta-item"><i class="fas fa-shield-alt"></i> Secure coding</div>
+              </div>
+              <div class="course-btns">
+                <button onclick="openPdfModal('assets/courses/App_Development_Masterclass.pdf', 'App Development Masterclass Syllabus')"
+                  class="btn-details"><i class="fas fa-file-alt"></i> Syllabus</button>
+                <a href="https://wa.me/916305847394?text=Hi,%20I'm%20interested%20in%20the%20App%20Development%20Masterclass."
+                  target="_blank" rel="noopener noreferrer" class="btn-access">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p class="course-empty" id="courseNoResults" role="status" hidden>No courses match that search. Try another keyword or filter.</p>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+     ROADMAPS
+════════════════════════════════════════ -->
+  <div class="page" id="page-roadmaps">
+    <div class="roadmap-page-inner">
+      <div class="roadmap-hero">
+        <span class="section-label">Learning paths</span>
+        <h1 class="page-title">Pick your cybersecurity roadmap</h1>
+        <p class="page-sub">Choose a path, build your skills step by step, and use the PDF guide as your learning companion.</p>
+        <div class="roadmap-hero-note"><i class="fas fa-file-pdf" aria-hidden="true"></i> Add course syllabi to <strong>assets/courses/</strong> and roadmap PDFs to <strong>assets/roadmaps/</strong>.</div>
+      </div>
+
+      <div class="roadmaps-grid">
+        <article class="roadmap-card">
+          <div class="roadmap-card-top"><span class="roadmap-category">Offensive security</span><span class="roadmap-icon"><i class="fas fa-user-secret" aria-hidden="true"></i></span></div>
+          <h2>Ethical Hacking</h2>
+          <p>Learn security fundamentals, responsible testing methodology, lab practice, and clear reporting.</p>
+          <div class="roadmap-card-footer"><span><i class="fas fa-route" aria-hidden="true"></i> Guided learning path</span><button class="roadmap-access" type="button" onclick="openPdfModal('assets/roadmaps/roadmap-ethical-hacking.pdf', 'Ethical Hacking Roadmap')">View roadmap <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+        </article>
+
+        <article class="roadmap-card">
+          <div class="roadmap-card-top"><span class="roadmap-category">Bug bounty</span><span class="roadmap-icon"><i class="fas fa-bug" aria-hidden="true"></i></span></div>
+          <h2>Bug Hunting</h2>
+          <p>Build web security knowledge, practice in authorized programs, and learn to write useful vulnerability reports.</p>
+          <div class="roadmap-card-footer"><span><i class="fas fa-route" aria-hidden="true"></i> Guided learning path</span><button class="roadmap-access" type="button" onclick="openPdfModal('assets/roadmaps/roadmap-bug-hunting.pdf', 'Bug Hunting Roadmap')">View roadmap <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+        </article>
+
+        <article class="roadmap-card">
+          <div class="roadmap-card-top"><span class="roadmap-category">Defensive security</span><span class="roadmap-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></span></div>
+          <h2>SOC Analyst</h2>
+          <p>Explore security monitoring, log analysis, alert triage, incident response, and blue-team fundamentals.</p>
+          <div class="roadmap-card-footer"><span><i class="fas fa-route" aria-hidden="true"></i> Guided learning path</span><button class="roadmap-access" type="button" onclick="openPdfModal('assets/roadmaps/roadmap-soc-analyst.pdf', 'SOC Analyst Roadmap')">View roadmap <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+        </article>
+
+        <article class="roadmap-card">
+          <div class="roadmap-card-top"><span class="roadmap-category">Security scripting</span><span class="roadmap-icon"><i class="fab fa-python" aria-hidden="true"></i></span></div>
+          <h2>Python for Cybersecurity</h2>
+          <p>Grow from Python basics to practical scripting for security workflows, data handling, and automation.</p>
+          <div class="roadmap-card-footer"><span><i class="fas fa-route" aria-hidden="true"></i> Guided learning path</span><button class="roadmap-access" type="button" onclick="openPdfModal('assets/roadmaps/roadmap-python-for-cybersecurity.pdf', 'Python for Cybersecurity Roadmap')">View roadmap <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+        </article>
+
+        <article class="roadmap-card">
+          <div class="roadmap-card-top"><span class="roadmap-category">Secure development</span><span class="roadmap-icon"><i class="fas fa-globe" aria-hidden="true"></i></span></div>
+          <h2>Web Development Security</h2>
+          <p>Learn web development foundations and how to build, test, and maintain safer web applications.</p>
+          <div class="roadmap-card-footer"><span><i class="fas fa-route" aria-hidden="true"></i> Guided learning path</span><button class="roadmap-access" type="button" onclick="openPdfModal('assets/roadmaps/roadmap-web-development-security.pdf', 'Web Development Security Roadmap')">View roadmap <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+        </article>
+
+        <article class="roadmap-card">
+          <div class="roadmap-card-top"><span class="roadmap-category">Mobile &amp; application security</span><span class="roadmap-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></span></div>
+          <h2>App Development Security</h2>
+          <p>Understand application development essentials, secure design choices, testing, and release practices.</p>
+          <div class="roadmap-card-footer"><span><i class="fas fa-route" aria-hidden="true"></i> Guided learning path</span><button class="roadmap-access" type="button" onclick="openPdfModal('assets/roadmaps/roadmap-app-development-security.pdf', 'App Development Security Roadmap')">View roadmap <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+     BLOG
+════════════════════════════════════════ -->
+  <div class="page" id="page-blogs">
+    <div class="page-top">
+      <span class="section-label">Blog</span>
+      <h1 class="page-title">Security insights, coming soon</h1>
+      <p class="page-sub">We’re preparing practical guides, learning notes, and security updates for the Cybertrix community.</p>
+    </div>
+    <section class="blog-empty-state">
+      <div class="blog-empty-card">
+        <span class="blog-empty-icon"><i class="fas fa-book-open" aria-hidden="true"></i></span>
+        <h2>Our first articles are in progress</h2>
+        <p>In the meantime, explore the courses and hands-on learning paths available on Cybertrix.</p>
+        <a class="btn btn-solid" href="#courses" onclick="showPage('courses'); return false;">Explore courses <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+  <div class="page" id="page-contact">
+    <div class="page-top">
+      <span class="section-label">Contact</span>
+      <h1 class="page-title">Get in touch</h1>
+      <p class="page-sub">Questions about a course, pricing, or batch dates — reach out directly. We respond within 24
+        hours.</p>
+    </div>
+
+    <section>
+      <div class="contact-inner">
+
+        <div class="reveal">
+          <h2 class="contact-heading">Direct contact</h2>
+          <p class="contact-sub">Fastest response is via WhatsApp. You can also email or DM on Instagram.</p>
+          <div class="contact-trust" aria-label="Verified contact channels">
+            <span><i class="fas fa-shield-alt" aria-hidden="true"></i> Verified channels</span>
+            <span><i class="fas fa-clock" aria-hidden="true"></i> Response within 24h</span>
+            <span><i class="fas fa-check-circle" aria-hidden="true"></i> Secure enrollment</span>
+          </div>
+          <div class="contact-list">
+            <div class="contact-row">
+              <div class="contact-row-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <div class="contact-row-label">WhatsApp</div>
+                <a class="contact-row-value" href="https://wa.me/916305847394" target="_blank" rel="noopener noreferrer">+91 63058 47394</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="contact-row-label">Email</div>
+                <a class="contact-row-value" href="mailto:support@cybertrix.in">support@cybertrix.in</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-icon"><i class="fab fa-instagram"></i></div>
+              <div>
+                <div class="contact-row-label">Instagram — Main</div>
+                <a class="contact-row-value" href="https://instagram.com/cyber_specterz" target="_blank" rel="noopener noreferrer">@cyber_specterz</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-icon"><i class="fab fa-instagram"></i></div>
+              <div>
+                <div class="contact-row-label">Instagram — Academy</div>
+                <a class="contact-row-value" href="https://www.instagram.com/cybertrix.in" target="_blank" rel="noopener noreferrer">@cybertrix.in</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-row-icon"><i class="fab fa-instagram"></i></div>
+              <div>
+                <div class="contact-row-label">Instagram — Personal</div>
+                <a class="contact-row-value" href="https://www.instagram.com/root_circuits" target="_blank" rel="noopener noreferrer">@root_circuits</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="reveal contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="form-group"><label class="form-label" for="contactName">Name</label><input type="text" id="contactName"
+              class="form-input" placeholder="Your name" autocomplete="name" minlength="2" maxlength="100" required /></div>
+          <div class="form-group"><label class="form-label" for="contactEmail">Email</label><input type="email" id="contactEmail"
+              class="form-input" placeholder="your@email.com" autocomplete="email" maxlength="254" required /></div>
+          <div class="form-group"><label class="form-label" for="contactPhone">Phone (optional)</label><input type="tel" id="contactPhone"
+              class="form-input" placeholder="+91 98765 43210" autocomplete="tel" maxlength="25" /></div>
+          <div class="form-group">
+            <label class="form-label" for="contactCourse">Course interest</label>
+            <select id="contactCourse" class="form-select form-input" required>
+              <option value="" selected disabled>Select a course</option>
+              <option>Ethical Hacking Masterclass</option>
+              <option>Web Application Pentesting</option>
+              <option>Network Pentesting</option>
+              <option>SOC Analyst Training</option>
+              <option>Python_For_Hackers</option>
+              <option>Cybersecurity Fundamentals</option>
+              <option>Web Development Masterclass</option>
+              <option>App Development Masterclass</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label" for="contactMessage">Message</label><textarea id="contactMessage"
+              class="form-textarea" placeholder="What would you like to know?" minlength="10" maxlength="2000" required></textarea></div>
+          <button class="form-submit" type="submit">Send message <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+        </form>
+
+      </div>
+    </section>
+  </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-logo" href="#home" onclick="showPage('home'); return false;">
+            <img src="assets/logo.png" alt="Cybertrix.in" />
+            <span class="footer-logo-text">Cyber<span>trix</span>.in</span>
+          </a>
+          <p class="footer-tagline">Cybersecurity training focused on practical, hands-on skill building.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/cyber_specterz" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="@cyber_specterz" aria-label="Cybertrix on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/cybertrix.in" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="@cybertrix.in" aria-label="Cybertrix on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/root_circuits" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="@root_circuits" aria-label="Root Circuits on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://wa.me/916305847394" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="WhatsApp Community" aria-label="Cybertrix WhatsApp community"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="https://github.com/Cyber-specterz" target="_blank" rel="noopener noreferrer" class="social-btn"
+              title="GitHub" aria-label="Cybertrix on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Courses</div>
+          <ul class="footer-links">
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Ethical Hacking</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Web Pentesting</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Network Pentesting</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">SOC Analyst</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Python for Hackers</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Cybersecurity Fundamentals</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Web Development</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">App Development</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="#home" onclick="showPage('home'); return false;">Home</a></li>
+            <li><a href="#courses" onclick="showPage('courses'); return false;">Courses</a></li>
+            <li><a href="#blogs" onclick="showPage('blogs'); return false;">Blog</a></li>
+            <li><a href="#roadmaps" onclick="showPage('roadmaps'); return false;">Roadmaps</a></li>
+            <li><a href="#contact" onclick="showPage('contact'); return false;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:support@cybertrix.in">support@cybertrix.in</a></li>
+            <li><a href="https://wa.me/916305847394" target="_blank" rel="noopener noreferrer">+91 6305847394</a></li>
+            <li><a href="https://instagram.com/cyber_specterz" target="_blank"
+                rel="noopener noreferrer">@cyber_specterz</a></li>
+            <li><a href="https://instagram.com/cybertrix.in" target="_blank"
+                rel="noopener noreferrer">@cybertrix.in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 <span>Cybertrix.in</span>. All rights reserved.</span>
+        <span class="footer-copy">Made in India 🇮🇳</span>
+      </div>
+      <div class="footer-legal">
+        <a href="mailto:support@cybertrix.in">support@cybertrix.in</a>
+        <span>•</span>
+        <span>Official WhatsApp enrollment channel</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reusable PDF / Document Modal -->
+  <div class="modal-backdrop" id="previewModal" aria-hidden="true" inert onclick="if(event.target === this) closePdfModal()">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Document Preview</h3>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <a id="modalPdfOpenBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-pdf-header"><i
+              class="fas fa-external-link-alt"></i> Open Full PDF</a>
+          <button class="modal-close" type="button" aria-label="Close PDF preview" onclick="closePdfModal()">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Reusable Video Course Modal -->
+  <div class="modal-backdrop" id="videoModal" aria-hidden="true" inert onclick="if(event.target === this) closeVideoModal()">
+    <div class="modal-container modal-container-video" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" tabindex="-1">
+      <div class="modal-header">
+        <h3 class="modal-title" id="videoModalTitle">Free Course Video</h3>
+        <button class="modal-close" type="button" aria-label="Close video preview" onclick="closeVideoModal()">&times;</button>
+      </div>
+      <div class="modal-body video-modal-body" id="videoModalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
