@@ -576,7 +576,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 28px; backgroun
 
 /* Responsive Adjustments (Mobile & Tablet Capable) */
 @media (max-width: 1024px) {
-  nav { padding: 0 24px; }
+  nav { padding: 0 24px; backdrop-filter: none; }
   .nav-links {
     display: flex; flex-direction: column; position: fixed; top: 0; right: 0; bottom: 0;
     width: min(340px, 88vw); background: var(--surface); border-left: 1px solid var(--border);
